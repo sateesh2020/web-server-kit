@@ -1,20 +1,20 @@
-# Apollo Universal Starter Kit CLI
+# Web Server Kit CLI
 
-We encourage you to modularize your Apollo Universal Starter Kit-based applications. It's best to design each
-application module as a decoupled chunk of functionality to make sure that deleting this module won't affect the other 
+We encourage you to modularize your Web Server Kit-based applications. It's best to design each
+application module as a decoupled chunk of functionality to make sure that deleting this module won't affect the other
 parts of the application.
 
 To help you create and delete new application modules, the starter kit comes with a custom Command Line Interface (CLI).
 
 ## Table of Contents
 
-* [First Use of the CLI](#first-use-of-the-cli)
-* [Choosing Technology Stacks with `choosestack`](#choosing-technology-stacks-with-choosestack)
-* [Basic Scaffolding with `addmodule`](#basic-scaffolding-with-addmodule)
-* [Deleting Features with `deletemodule`](#deleting-features-with-deletemodule)
-* [Creating CRUD Modules with `addcrud`](#creating-crud-modules-with-addcrud)
-    * [Using Optional Parameters with CLI Commands](#using-optional-parameters-with-cli-commands)
-* [Running CLI with Options (Flags)](#running-cli-with-options-flags)
+- [First Use of the CLI](#first-use-of-the-cli)
+- [Choosing Technology Stacks with `choosestack`](#choosing-technology-stacks-with-choosestack)
+- [Basic Scaffolding with `addmodule`](#basic-scaffolding-with-addmodule)
+- [Deleting Features with `deletemodule`](#deleting-features-with-deletemodule)
+- [Creating CRUD Modules with `addcrud`](#creating-crud-modules-with-addcrud)
+  - [Using Optional Parameters with CLI Commands](#using-optional-parameters-with-cli-commands)
+- [Running CLI with Options (Flags)](#running-cli-with-options-flags)
 
 ## First Use of the CLI
 
@@ -34,7 +34,7 @@ yarn cli
 
 $ node tools/cli
 
-   cli 1.0.0 - Full info: https://github.com/sysgears/apollo-universal-starter-kit/wiki/Apollo-Starter-Kit-CLI
+   cli 1.0.0 - Full info: https://github.com/sateesh2020/web-server-kit/wiki/Apollo-Starter-Kit-CLI
 
    USAGE
 
@@ -48,26 +48,26 @@ $ node tools/cli
 
    GLOBAL OPTIONS
 
-     -h, --help         Display help                                      
-     -V, --version      Display version                                   
-     --no-color         Disable colors                                    
+     -h, --help         Display help
+     -V, --version      Display version
+     --no-color         Disable colors
      --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages    
+     -v, --verbose      Verbose mode - will also output debug messages
 
 Done in 0.94s.
 ```
 
 ## Choosing Technology Stacks with `choosestack`
 
-Apollo Universal Starter Kit has a few different stacks allowing you to choose the best technologies for your concrete
+Web Server Kit has a few different stacks allowing you to choose the best technologies for your concrete
 project. When you clone the starter kit with Git, you can remove the unnecessary stacks.
- 
-You can use the CLI to choose the stacks you want to keep; all others will be removed completely. 
 
-**NOTE**: If you've just cloned the starter kit, remember to first install the dependencies by running the command 
+You can use the CLI to choose the stacks you want to keep; all others will be removed completely.
+
+**NOTE**: If you've just cloned the starter kit, remember to first install the dependencies by running the command
 `yarn`. Otherwise, you'll see an error when using the CLI to remove the unnecessary packages.
 
-**NOTE**: If you wipe out a stack, you can't restore it! 
+**NOTE**: If you wipe out a stack, you can't restore it!
 
 Run the following command from the root of the project:
 
@@ -75,7 +75,7 @@ Run the following command from the root of the project:
 yarn cli choosestack
 ```
 
-You'll see a list of options. Navigate between the stacks using the arrow keys and select the stack(s) **that you want 
+You'll see a list of options. Navigate between the stacks using the arrow keys and select the stack(s) **that you want
 to keep** by pressing Space:
 
 ```bash
@@ -89,7 +89,7 @@ Choose your technology stack or stacks. Press <Space> to select a stack, <A> to 
 
 Once you selected all the stacks you want to keep, press Enter. The console will show a confirmation.
 
-For example, you'll see the following confirmation in the command line provided that you selected `angular` and `node` 
+For example, you'll see the following confirmation in the command line provided that you selected `angular` and `node`
 from the list:
 
 ```bash
@@ -97,8 +97,8 @@ from the list:
 Done in 342.02s.
 ```
 
-Your project will have the folders `packages/client-angular` and `packages/server`. Also, only the Angular 
-(`client-angular`) and Node.js (`server-ts`) modules under `modules/{module}` will be kept. All other packages and 
+Your project will have the folders `packages/client-angular` and `packages/server`. Also, only the Angular
+(`client-angular`) and Node.js (`server-ts`) modules under `modules/{module}` will be kept. All other packages and
 modules will be fully removed and nonrecoverable.
 
 ## Basic Scaffolding with `addmodule`
@@ -160,7 +160,7 @@ packages/client/src/modules/Order/
         └── translations.json            # JSON with English translations
     └── ru                               # Russian localization
         └── translations.json            # JSON with Russian translations
-    └── index.js                         # a utility JavaScript file    
+    └── index.js                         # a utility JavaScript file
 ├── index.native.tsx                     # a default React Native app file
 └── index.tsx                            # a default web application file
 ```
@@ -187,25 +187,25 @@ Deleting server files…
 Done in 3.89s.
 ```
 
-You can use this command to delete any standard module that Apollo Universal Starter Kit comes with.
+You can use this command to delete any standard module that Web Server Kit comes with.
 
 ## Creating CRUD Modules with `addcrud`
 
 **NOTE**: The `addcrud` command is only available in the [cli-crud] branch. The master branch doesn't have this command!
 
 The `addcrud` command is similar to [`addmodule`](#basic-scaffolding-with-addmodule) in that it also generates the
-application modules. But the key difference between the two commands is that `addcrud` generates the server modules that 
-you can use immediately by sending GraphQL queries, whereas `addmodule` creates _empty module templates_, and 
+application modules. But the key difference between the two commands is that `addcrud` generates the server modules that
+you can use immediately by sending GraphQL queries, whereas `addmodule` creates _empty module templates_, and
 you still have to manually write all the queries, mutations, and schemas.
 
 `addcrud` does the following:
 
-* It generates the application module with the following key files:
-  * `schema.graphql`, provides a description for GraphQL types, fields, and operations to perform on the created module
-  * `schema.ts`, implements the [Domain Schema] pattern for enterprise applications
-  * `resolvers.ts`, contains GraphQL queries to perform CRUD operations
-  * `sql.ts`, provides the functions to access the database
-* It creates the migrations (adds new tables) and seeds (adds the sample data) for the new entity you create
+- It generates the application module with the following key files:
+  - `schema.graphql`, provides a description for GraphQL types, fields, and operations to perform on the created module
+  - `schema.ts`, implements the [Domain Schema] pattern for enterprise applications
+  - `resolvers.ts`, contains GraphQL queries to perform CRUD operations
+  - `sql.ts`, provides the functions to access the database
+- It creates the migrations (adds new tables) and seeds (adds the sample data) for the new entity you create
 
 You can generate a new application module with `addcrud` using the following command:
 
@@ -238,15 +238,15 @@ packages/server/src/modules/Order
 └── sql.ts                      # a Knex connector
 ```
 
-The `addcrud` command also adds a migration and a seed in the `packages/server/src/database/migrations/` and 
+The `addcrud` command also adds a migration and a seed in the `packages/server/src/database/migrations/` and
 `packages/server/src/database/seeds` directories respectively:
 
-* `packages/server/src/database/migrations/1542808346607_ModuleName.js`
-* `packages/server/src/database/seeds/1542808346607_ModuleName.js`
+- `packages/server/src/database/migrations/1542808346607_ModuleName.js`
+- `packages/server/src/database/seeds/1542808346607_ModuleName.js`
 
 To test the modules generated with `addcrud`:
 
-1. Run the Apollo Universal Starter Kit project with `yarn watch`
+1. Run the Web Server Kit project with `yarn watch`
 2. Follow to the [GraphiQL page]
 3. Run your queries and mutations for the generated entity
 
@@ -304,4 +304,4 @@ yarn cli --verbose
 ```
 
 [graphiql page]: http://localhost:3000/graphiql
-[domain schema]: https://github.com/sysgears/domain-schema
+[domain schema]: https://github.com/sateesh2020/domain-schema

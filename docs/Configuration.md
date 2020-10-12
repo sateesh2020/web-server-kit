@@ -1,26 +1,26 @@
-# Apollo Universal Starter Kit Configurations
+# Web Server Kit Configurations
 
-This section contains information about Apollo Universal Starter Kit configurations. You can follow to various sections
+This section contains information about Web Server Kit configurations. You can follow to various sections
 by clicking the links below:
 
-* [General Information](#general-information)
-* [Apollo Engine](#apollo-engine)
-* [Basic Application Settings](#basic-application-settings)
-* [Build Configuration](#build-configuration)
-* [Built-In UI Libraries](#built-in-ui-libraries)
-* [Database](#database)
-* [Internationalization](#internationalization)
-* [Mailer](#mailer)
-* [Mobile Chat](#mobile-chat)
-* [Pagination](#pagination)
-* [Stripe Subscription](#stripe-subscription)
-* [Server Side Rendering](#server-side-rendering)
-* [Upload Module](#upload-module)
-* [User Authentication](#user-authentication)
+- [General Information](#general-information)
+- [Apollo Engine](#apollo-engine)
+- [Basic Application Settings](#basic-application-settings)
+- [Build Configuration](#build-configuration)
+- [Built-In UI Libraries](#built-in-ui-libraries)
+- [Database](#database)
+- [Internationalization](#internationalization)
+- [Mailer](#mailer)
+- [Mobile Chat](#mobile-chat)
+- [Pagination](#pagination)
+- [Stripe Subscription](#stripe-subscription)
+- [Server Side Rendering](#server-side-rendering)
+- [Upload Module](#upload-module)
+- [User Authentication](#user-authentication)
 
 ## General Information
 
-The main configuration file in Apollo Universal Starter Kit is called `settings.js` and it's stored in the root of the
+The main configuration file in Web Server Kit is called `settings.js` and it's stored in the root of the
 project. This file doesn't contain any project properties but _imports_ the configuration files from the `config`
 folder. The starter kit modules use `settings.js` to get the necessary values specified in the `config/*.js` files.
 
@@ -30,20 +30,20 @@ The flow looks similar to this:
 config/*.js => settings.js => ApplicationFile.js
 ```
 
-If you wish to add specific configurations to your Apollo Universal Starter Kit project, we recommend creating the
+If you wish to add specific configurations to your Web Server Kit project, we recommend creating the
 configuration file under the `config` folder. Then, you can import the settings in your concrete module as shown in the
 example below:
 
 ```javascript
 // entry index.ts file located in packages/server/src/modules/yourModule
-import settings from '../../../../../settings';
+import settings from "../../../../../settings";
 
 // your code
 ```
 
 ## Apollo Engine
 
-Apollo Universal Starter Kit uses [Apollo Engine] and stores the Engine configurations in the `config/engine.js` file.
+Web Server Kit uses [Apollo Engine] and stores the Engine configurations in the `config/engine.js` file.
 
 | Property | Type   | Description                                                  |
 | -------- | ------ | ------------------------------------------------------------ |
@@ -66,16 +66,16 @@ APOLLO_ENGINE_API_KEY=your_api_key
 
 You can set the basic application settings in the `config/app.js` file.
 
-| Property            | Type    | Description                                                      |
-| ------------------- | ------- | ---------------------------------------------------------------  |
-| name                | String  | The project name. Defaults to 'Apollo Starter Kit'               |
-| stackFragmentFormat | String  | Special URL setting for Visual Studio Code IDE                   |
-| logging             | Object  | Stores various [logging properties](#logging-properties-logging) |
+| Property            | Type   | Description                                                      |
+| ------------------- | ------ | ---------------------------------------------------------------- |
+| name                | String | The project name. Defaults to 'Apollo Starter Kit'               |
+| stackFragmentFormat | String | Special URL setting for Visual Studio Code IDE                   |
+| logging             | Object | Stores various [logging properties](#logging-properties-logging) |
 
 You can learn more about `stackFragmentFormat` in the following documents:
 
-* Consult [Opening Visual Studio Code with URLs] for Windows and MacOS
-* Consult [Visual Studio Code URL Handler] for Linux
+- Consult [Opening Visual Studio Code with URLs] for Windows and MacOS
+- Consult [Visual Studio Code URL Handler] for Linux
 
 ### Logging Properties `logging`
 
@@ -87,43 +87,43 @@ You can learn more about `stackFragmentFormat` in the following documents:
 
 ## Build Configuration
 
-Apollo Universal Starter Kit contains build-time settings in a  `build.config.js`. These files are located in `packages/*/build.config.js` plus global build-time settings are located in `<monorepoRoot>/build.config.js`. These files are evaluated during build-phase. They typically give precedence to environment variables and if those are not set use default values.
+Web Server Kit contains build-time settings in a `build.config.js`. These files are located in `packages/*/build.config.js` plus global build-time settings are located in `<monorepoRoot>/build.config.js`. These files are evaluated during build-phase. They typically give precedence to environment variables and if those are not set use default values.
 
 ## Built-In UI Libraries
 
-Apollo Universal Starter Kit uses various UI libraries for the three clients.
+Web Server Kit uses various UI libraries for the three clients.
 
 With React, you can use either [Twitter Bootstrap] or [Ant Design]. For the React Native mobile app, you can use [NativeBase]. The Angular app comes with Angular Material, and the Vue client also uses Bootstrap.
 
-By default, Apollo Universal Starter Kit enables Twitter Bootstrap for the React and Vue clients and NativeBase for the
+By default, Web Server Kit enables Twitter Bootstrap for the React and Vue clients and NativeBase for the
 mobile app. Angular uses the Material library.
 
 You can enable Ant Design styles for React by changing the module `look` exports:
 
-* To use Ant Design instead of Twitter Bootstrap, uncomment the respective export for Ant Design and comment out the
-export for Bootstrap in the `modules/look/client-react/look.ts` file:
+- To use Ant Design instead of Twitter Bootstrap, uncomment the respective export for Ant Design and comment out the
+  export for Bootstrap in the `modules/look/client-react/look.ts` file:
 
 ```javascript
 // export * from './ui-bootstrap';
-export * from './ui-antd';
+export * from "./ui-antd";
 ```
 
 ## Database
 
-Apollo Universal Starter Kit supports SQL databases (the commonest examples are PostgreSQL, MySQL, and SQLite; the
+Web Server Kit supports SQL databases (the commonest examples are PostgreSQL, MySQL, and SQLite; the
 latter is used by default by the starter kit). The database configurations are located in the `config/db.js` file.
 
 To be able to use PostgreSQL or MySQL, you only need to add necessary environment variables to `config/db.js` file.
 `packages/server/.env` file:
 
-* `DB_CLIENT`. Use `mysql` for MySQL or `pg` for PostgreSQL. If you don't set this property, SQLite will be used by
-default
-* `DB_HOST`, you can use `localhost` for development mode.
-* `DB_USER`, database username
-* `DB_PASSWORD`, database password
-* `DB_DATABASE`, the database to which the application will connect
-* `DB_SOCKET_PATH`, the socket path
-* `DB_SSL`, use the SSL certificate to connect with SSL
+- `DB_CLIENT`. Use `mysql` for MySQL or `pg` for PostgreSQL. If you don't set this property, SQLite will be used by
+  default
+- `DB_HOST`, you can use `localhost` for development mode.
+- `DB_USER`, database username
+- `DB_PASSWORD`, database password
+- `DB_DATABASE`, the database to which the application will connect
+- `DB_SOCKET_PATH`, the socket path
+- `DB_SSL`, use the SSL certificate to connect with SSL
 
 **NOTE**: we advise against setting the environment variables directly in the configurations. Instead, set the variables
 in the `packages/server/.env` file:
@@ -143,19 +143,19 @@ To set the correct values for the listed variables, consult the following docume
 
 For PostgreSQL:
 
-* [Connection URIs]
-* [Secure TCP/IP Connections with SSL]
-* [PostgreSQL socket path]
+- [Connection URIs]
+- [Secure TCP/IP Connections with SSL]
+- [PostgreSQL socket path]
 
 For MySQL:
 
-* [Connecting using a URI String]
-* [Using Encrypted Connections]
-* [MySQL socket path]
+- [Connecting using a URI String]
+- [Using Encrypted Connections]
+- [MySQL socket path]
 
 ## Internationalization
 
-The internationalization configurations are stored in the `config/i18n.js` file. Apollo Universal Starter Kit uses the
+The internationalization configurations are stored in the `config/i18n.js` file. Web Server Kit uses the
 i18next library to implement internationalization for all the platforms &ndash; client, server, and mobile.
 
 | Property         | Type          | Description                                                              |
@@ -171,7 +171,7 @@ information. The `cookie` property is used by [i18next-express-middleware].
 
 ## Mailer
 
-Apollo Universal Starter Kit uses [Nodemailer] to provide the emailing functionality. The Nodemailer configurations are
+Web Server Kit uses [Nodemailer] to provide the emailing functionality. The Nodemailer configurations are
 stored in the `config/mailer.js` file.
 
 To make the mailer module work, you need to specify these data in `packages/server/.env`:
@@ -206,20 +206,20 @@ Consult Nodemailer [general options] and [authentication] documentation for more
 
 To configure the mobile chat module, follow to the dedicated section:
 
-* [docs/modules/mobileChat.md]
+- [docs/modules/mobileChat.md]
 
 ## Pagination
 
-You can change the pagination settings in the `config/pagination.js` file. Apollo Universal Starter Kit lets you
+You can change the pagination settings in the `config/pagination.js` file. Web Server Kit lets you
 configure pagination for the client-side application and for the mobile app separately.
 
-Apollo Universal Starter Kit implements the relay- and cursor-based pagination types:
+Web Server Kit implements the relay- and cursor-based pagination types:
 
-* The relay pagination provides the **Load More** button. By clicking **Load More**, the user tell the application to
-load a number of the new items asynchronously and show them in the same page.
+- The relay pagination provides the **Load More** button. By clicking **Load More**, the user tell the application to
+  load a number of the new items asynchronously and show them in the same page.
 
-* The standard pagination is cursor-based: the items are shown page by page, and the user needs to navigate between
-pages to see the items. You can learn more about the cursor-based pagination in the [dedicated Apollo blog post].
+- The standard pagination is cursor-based: the items are shown page by page, and the user needs to navigate between
+  pages to see the items. You can learn more about the cursor-based pagination in the [dedicated Apollo blog post].
 
 ### Pagination Settings for the Client-Side Application
 
@@ -234,9 +234,9 @@ Usage example (the configuration set in `config/pagination.js`):
 export default {
   web: {
     itemsNumber: 10,
-    type: 'relay' // Use 'standard' or 'relay' for the web application
-  }
-}
+    type: "relay", // Use 'standard' or 'relay' for the web application
+  },
+};
 ```
 
 ### Pagination Settings for the Mobile App
@@ -252,14 +252,14 @@ Usage example (the configuration set in `config/pagination.js`):
 export default {
   mobile: {
     itemsNumber: 10,
-    type: 'relay' // Use 'standard' or 'relay' for the mobile app
-  }
+    type: "relay", // Use 'standard' or 'relay' for the mobile app
+  },
 };
 ```
 
 ## Server Side Rendering
 
-Apollo Universal Starter Kit supports Server Side Rendering (SSR), and this features is enabled by default for both
+Web Server Kit supports Server Side Rendering (SSR), and this features is enabled by default for both
 Express server application and React client app.
 
 **NOTE**: SSR is disabled by default for the **Angular application** in `packages/client-angular` because the current
@@ -268,8 +268,8 @@ Angular app implementation doesn't support SSR.
 If you want to disable SSR for React and Express applications, you need to change a dedicated SpinJS setting in two
 `.spinrc.js` files:
 
-* For the Express application, set `config.options.ssr` to `false` in `packages/server/.spinrc.js`
-* For the React application, set `config.options.ssr` to `false` in `packages/client/.spinrc.js`
+- For the Express application, set `config.options.ssr` to `false` in `packages/server/.spinrc.js`
+- For the React application, set `config.options.ssr` to `false` in `packages/client/.spinrc.js`
 
 **NOTE**: If you're going to disable SSR, do this in **both** `server` and `client` packages!
 
@@ -289,7 +289,7 @@ to
 
 To configure the Stripe subscription module, follow to the dedicated section:
 
-* [docs/modules/stripeSubscription.md]
+- [docs/modules/stripeSubscription.md]
 
 ## Upload Module
 
@@ -306,7 +306,7 @@ generated when you upload a file to the server.
 
 ## User Authentication
 
-You can configure authentication for your Apollo Universal Starter Kit-based application in the `config/user.js` file.
+You can configure authentication for your Web Server Kit-based application in the `config/user.js` file.
 
 ### `secret`
 
@@ -331,7 +331,7 @@ the social authentication properties for Facebook, GitHub, LinkedIn, and Google.
 
 #### `access`
 
-Configures the authentication methods. By default, Apollo Universal Starter Kit uses both JSON Web Token and
+Configures the authentication methods. By default, Web Server Kit uses both JSON Web Token and
 session-based authentication mechanisms.
 
 **Usage Example**
@@ -341,23 +341,23 @@ export default {
   auth: {
     access: {
       session: {
-        enabled: true
+        enabled: true,
       },
       jwt: {
         enabled: true,
-        tokenExpiresIn: '1m',
-        refreshTokenExpiresIn: '7d'
-      }
-    }
-  }
-}
+        tokenExpiresIn: "1m",
+        refreshTokenExpiresIn: "7d",
+      },
+    },
+  },
+};
 ```
 
 **Session Properties**
 
-| access.session        | Object  | Contains the global properties for the server session-based authentication |
-| --------------------- | ------- | -------------------------------------------------------------------------- |
-| enabled               | Boolean | Enables the session mechanism for authentication. Defaults to `true`       |
+| access.session | Object  | Contains the global properties for the server session-based authentication |
+| -------------- | ------- | -------------------------------------------------------------------------- |
+| enabled        | Boolean | Enables the session mechanism for authentication. Defaults to `true`       |
 
 **JWT Properties**
 
@@ -371,12 +371,12 @@ export default {
 
 Configures the password validation and other settings for the server-side and client-side validation.
 
-| password              | Object  | Contains the global properties for the `password` configurations         |
-| --------------------- | ------- | ------------------------------------------------------------------------ |
-| requireEmailConfirmation | Boolean | Require email confirmation for new registered users. Defaults to `true` |
-| sendPasswordChangesEmail | Boolean | Sends the confirmation email after the user changes their password. Defaults to `true`|
-| minLength                | Number  | Sets the minimal password length for validation. Defaults to `8`         |
-| enabled                  | Boolean | Enables or disables the password field on the client. Defaults to `true` |
+| password                 | Object  | Contains the global properties for the `password` configurations                       |
+| ------------------------ | ------- | -------------------------------------------------------------------------------------- |
+| requireEmailConfirmation | Boolean | Require email confirmation for new registered users. Defaults to `true`                |
+| sendPasswordChangesEmail | Boolean | Sends the confirmation email after the user changes their password. Defaults to `true` |
+| minLength                | Number  | Sets the minimal password length for validation. Defaults to `8`                       |
+| enabled                  | Boolean | Enables or disables the password field on the client. Defaults to `true`               |
 
 Usage example:
 
@@ -388,20 +388,20 @@ export default {
       requireEmailConfirmation: true,
       sendAddNewUserEmail: true,
       minLength: 8,
-      enabled: true
-    }
-  }
-}
+      enabled: true,
+    },
+  },
+};
 ```
 
 #### `certificate`
 
 Configures your application for using Secure Sockets Layer (SSL).
 
-| certificate           | Object  | Contains the global properties for the SSL certificate          |
-| --------------------- | ------- | --------------------------------------------------------------- |
-| devSerial             | String  | Sets the SSL certificate serial number number. Defaults to `00` |
-| enabled               | Boolean | Enables the use of SSL certificate. Defaults to `false`         |
+| certificate | Object  | Contains the global properties for the SSL certificate          |
+| ----------- | ------- | --------------------------------------------------------------- |
+| devSerial   | String  | Sets the SSL certificate serial number number. Defaults to `00` |
+| enabled     | Boolean | Enables the use of SSL certificate. Defaults to `false`         |
 
 **NOTE**: the `CERTIFICATE_DEVSERIAL` constant is initialized to `00` in the `config/user.js` file.
 
@@ -412,10 +412,10 @@ export default {
   auth: {
     certificate: {
       devSerial: CERTIFICATE_DEVSERIAL,
-      enabled: false
-    }
-  }
-}
+      enabled: false,
+    },
+  },
+};
 ```
 
 #### `facebook`
@@ -542,8 +542,7 @@ concatenated with `http://localhost:3000/`. The absolute callback URL for Google
 settings for development mode.
 
 **NOTE**: You may also need to activate the Google+ API to be able to authenticate with Google. Otherwise, you may see
-the error `ServerError: Access Not Configured. Google+ API has not been used in project 245355975001 before or it is
-disabled.` (Instead of `245355975001` the error will contain the actual number of your project.)
+the error `ServerError: Access Not Configured. Google+ API has not been used in project 245355975001 before or it is disabled.` (Instead of `245355975001` the error will contain the actual number of your project.)
 
 You can also view the error in the console:
 
@@ -558,7 +557,7 @@ code: 403 }
 If the error was produced, you need to visit the link shown in the terminal and activate Google+ for your application.
 
 [opening visual studio code with urls]: https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls
-[visual studio code url handler]: https://github.com/sysgears/vscode-handler#visual-studio-code-url-handler
+[visual studio code url handler]: https://github.com/sateesh2020/vscode-handler#visual-studio-code-url-handler
 [webpack]: https://webpack.js.org/
 [twitter bootstrap]: http://getbootstrap.com
 [ant design]: https://ant.design
@@ -578,9 +577,9 @@ If the error was produced, you need to visit the link shown in the terminal and 
 [nodemailer]: https://nodemailer.com/about/
 [general options]: https://nodemailer.com/smtp/#general-options
 [authentication]: https://nodemailer.com/smtp/#authentication
-[docs/modules/mobileChat.md]: /docs/modules/Mobile%20Chat.md
+[docs/modules/mobilechat.md]: /docs/modules/Mobile%20Chat.md
 [dedicated apollo blog post]: https://blog.apollographql.com/understanding-pagination-rest-graphql-and-relay-b10f835549e7
-[docs/modules/stripeSubscription.md]: /docs/modules/Stripe%20Subscription.md
+[docs/modules/stripesubscription.md]: /docs/modules/Stripe%20Subscription.md
 [passport-facebook]: https://github.com/jaredhanson/passport-facebook
 [facebook apps]: https://developers.facebook.com/apps
 [connect your app to facebook]: https://auth0.com/docs/connections/social/facebook

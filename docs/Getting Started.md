@@ -1,25 +1,25 @@
-# Getting Started with Apollo Universal Starter Kit
+# Getting Started with Web Server Kit
 
-In this section, you'll install Apollo Universal Starter Kit and run the project for web or mobile development.
+In this section, you'll install Web Server Kit and run the project for web or mobile development.
 
 Follow the links below to the installation sections you're interested in:
 
-1. [Installing and Running Apollo Universal Starter Kit](#installing-and-running-apollo-universal-starter-kit)
+1. [Installing and Running Web Server Kit](#installing-and-running-web-server-kit)
 2. [Running the Mobile App in Expo Client](#running-the-mobile-app-with-expo)
 3. [Running the Starter Kit in a Mobile Simulator](#running-the-starter-kit-in-a-mobile-simulator)
-    * [Android Studio](#android-studio)
-    * [Genymotion](#genymotion)
-    * [Xcode](#xcode)
+   - [Android Studio](#android-studio)
+   - [Genymotion](#genymotion)
+   - [Xcode](#xcode)
 
-## Installing and Running Apollo Universal Starter Kit
+## Installing and Running Web Server Kit
 
 1. Install Node.js 6.x or higher. Using Node.js 8.x is recommended.
 
-2. Clone the stable branch of Apollo Universal Starter Kit.
+2. Clone the stable branch of Web Server Kit.
 
 ```bash
-git clone -b stable https://github.com/sysgears/apollo-universal-starter-kit.git
-cd apollo-universal-starter-kit
+git clone -b stable https://github.com/sateesh2020/web-server-kit.git
+cd web-server-kit
 ```
 
 The stable branch contains only the approved and tested functionalities that were introduced in Apollo Universal Starter
@@ -58,7 +58,7 @@ You can start changing the application code, and the changes will be applied imm
 can also open the app in multiple tabs and test it: Increase the counter or add a new post or comment, and you'll see
 that all opened tabs are updated simultaneously.
 
-**NOTE**: Apollo Universal Starter Kit provides React, Angular and Vue frontends.
+**NOTE**: Web Server Kit provides React, Angular and Vue frontends.
 
 To run Angular frontend execute:
 `yarn watch:angular`
@@ -70,7 +70,7 @@ To run Vue frontend execute:
 
 1. Install the Expo Client app on [your Android] or [iOS device].
 
-2. Create data in the database (if you've already run Apollo Universal Starter Kit before, skip this step):
+2. Create data in the database (if you've already run Web Server Kit before, skip this step):
 
 ```bash
 yarn seed
@@ -120,13 +120,13 @@ export PATH="/home/username/Android/Sdk/platform-tools:$PATH"
 
 This line will add the `~/Android/Sdk/platform-tools/` directory into `PATH` and allow Expo (inside the starter kit) to
 use the `adb` instance from the Android SDK. Put simply, the Expo client will be automatically installed and run in the
-simulator when you run the Apollo Universal Starter Kit project for mobile.
+simulator when you run the Web Server Kit project for mobile.
 
 **NOTE**: use the username on you development computer instead of the `/username/` part in `PATH`, for example,
 `"/home/johndoe/Android/Sdk/platform-tools:$PATH"`.
 
 6. Launch your virtual phone from AVD Manager: open the **Tools** menu and click **AVD Manager**. In the list of
-available virtual devices, run the one you created.
+   available virtual devices, run the one you created.
 
 7. Launch the starter kit with `yarn watch:android` or `yarn watch:ios`.
 
@@ -134,7 +134,7 @@ available virtual devices, run the one you created.
 sample data.
 
 8. The Expo Client app will automatically start. You don't need to additionally install Expo Client on the virtual
-smartphone.
+   smartphone.
 
 **NOTE**: It may take up to a minute or two to build and run the mobile app on Android for the first time. The next runs
 will be more rapid.
@@ -179,8 +179,8 @@ keyboard.
 
 **NOTE**: If the iOS simulator fails to start Expo Client or the starter kit mobile app, try resetting the simulator:
 
-* On the **Hardware** menu, click **Erase all content and settings**.
-* Restart the application.
+- On the **Hardware** menu, click **Erase all content and settings**.
+- Restart the application.
 
 [lerna]: https://lerna.js.io/
 [http://localhost:3000/]: http://localhost:3000/

@@ -18,12 +18,12 @@ describe('Class FormError works', () => {
         errors: { usernameOrEmail: 'Please enter a valid password.' },
         stacktrace: [
           'Error: Failed valid user password',
-          '    at _callee2$ (~/apollo-universal-starter-kit/node_modules/@gqlapp/user-server-ts/auth/password/resolvers.js:29:1)',
-          '    at tryCatch (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:62:40)',
-          '    at Generator.invoke [as _invoke] (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:288:22)',
-          '    at Generator.prototype.(anonymous function) [as next] (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:114:21)',
-          '    at asyncGeneratorStep (~/apollo-universal-starter-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)',
-          '    at _next (~/apollo-universal-starter-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)'
+          '    at _callee2$ (~/web-server-kit/node_modules/@gqlapp/user-server-ts/auth/password/resolvers.js:29:1)',
+          '    at tryCatch (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:62:40)',
+          '    at Generator.invoke [as _invoke] (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:288:22)',
+          '    at Generator.prototype.(anonymous function) [as next] (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:114:21)',
+          '    at asyncGeneratorStep (~/web-server-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)',
+          '    at _next (~/web-server-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)'
         ]
       },
       locations: [{ line: 2, column: 3 }],
@@ -44,12 +44,12 @@ describe('Class FormError works', () => {
         errors: { email: 'E-mail already exists.' },
         stacktrace: [
           'Error: Failed reset email',
-          '    at _callee2$ (~/apollo-universal-starter-kit/node_modules/@gqlapp/user-server-ts/auth/password/resolvers.js:29:1)',
-          '    at tryCatch (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:62:40)',
-          '    at Generator.invoke [as _invoke] (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:288:22)',
-          '    at Generator.prototype.(anonymous function) [as next] (~/apollo-universal-starter-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:114:21)',
-          '    at asyncGeneratorStep (~/apollo-universal-starter-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)',
-          '    at _next (~/apollo-universal-starter-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)'
+          '    at _callee2$ (~/web-server-kit/node_modules/@gqlapp/user-server-ts/auth/password/resolvers.js:29:1)',
+          '    at tryCatch (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:62:40)',
+          '    at Generator.invoke [as _invoke] (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:288:22)',
+          '    at Generator.prototype.(anonymous function) [as next] (~/web-server-kit/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js:114:21)',
+          '    at asyncGeneratorStep (~/web-server-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)',
+          '    at _next (~/web-server-kit/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)'
         ]
       },
       locations: [{ line: 2, column: 3 }],

@@ -1,12 +1,12 @@
 # Available Scripts
 
-Apollo Universal Starter Kit comes with a root `package.json` file that contains commands you can run for all the
+Web Server Kit comes with a root `package.json` file that contains commands you can run for all the
 packages &ndash; web, server, and mobile.
 
-You can run the scripts from the root of your Apollo Universal Starter Kit project:
+You can run the scripts from the root of your Web Server Kit project:
 
 ```bash
-# project root, typically apollo-universal-starter-kit
+# project root, typically web-server-kit
 yarn build
 ```
 
@@ -18,7 +18,7 @@ npm run build
 
 ## Global Scripts in `root/package.json`
 
-**NOTE**: Most scripts in `apollo-universal-starter-kit/package.json` run with [Lerna], a tool that enables us to
+**NOTE**: Most scripts in `web-server-kit/package.json` run with [Lerna], a tool that enables us to
 simultaneously run the same scripts for all the packages &ndash; client, server, and mobile.
 
 ### `yarn build`
@@ -33,7 +33,7 @@ Removes the compiled production application files from the `packages/server/buil
 
 ### `yarn start`
 
-Runs the Apollo Universal Starter Kit application in production mode. The application will be open in your default
+Runs the Web Server Kit application in production mode. The application will be open in your default
 browser. The application code is minified and optimized to ensure the best performance.
 
 ### `yarn watch`
@@ -78,7 +78,7 @@ project for the web (the React application) and Android platforms.
 
 ### `yarn cli`
 
-Runs the Apollo Universal Starter Kit built-in command line interface (CLI). The CLI is currently used for scaffolding
+Runs the Web Server Kit built-in command line interface (CLI). The CLI is currently used for scaffolding
 and deleting Apollo Starter Kit modules. Consult the [CLI guide] for more information about `yarn cli`.
 
 ### `yarn stripe:setup`
@@ -161,6 +161,6 @@ lines where issues were found) will be shown in the console.
 [haul cli]: https://github.com/callstack/haul
 [metro bundler]: https://facebook.github.io/metro/
 [expo cli documentation]: https://docs.expo.io/versions/latest/workflow/expo-cli
-[esLint]: https://eslint.org/
+[eslint]: https://eslint.org/
 [tslint]: https://palantir.github.io/tslint/
 [lint-staged]: https://www.npmjs.com/package/lint-staged

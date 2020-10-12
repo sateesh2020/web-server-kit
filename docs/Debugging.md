@@ -1,4 +1,4 @@
-# Debugging code of Apollo Universal Starter Kit
+# Debugging code of Web Server Kit
 
 ## Debugging NodeJS backend server
 
@@ -15,6 +15,7 @@ code and add breakpoints inside files.
 ### Debugging NodeJS backend server via Visual Studio code
 
 Click debug icon in the left VS Code navbar or press `Ctrl+Shift+D`. Click on the gear icon, select Node.JS, then click on blue `Add Configuration` button in the down right corner and specify `Node.JS Attach`. This will add the configuration that attaches to Node process with inspect listener on port `9229`, delete the other configuration in launch.json:
+
 ```
 {
   "type": "node",
@@ -23,7 +24,9 @@ Click debug icon in the left VS Code navbar or press `Ctrl+Shift+D`. Click on th
   "program": "${workspaceFolder}/--stream"
 }
 ```
+
 It is not needed. The one you need is:
+
 ```
 {
   "type": "node",
@@ -56,8 +59,8 @@ Click on the Debug icon in left VS Code navbar again, select `Launch Chrome` in 
 ### Debugging via Chrome browser
 
 Activate Expo Developer Menu:
-  - On iOS device by shaking device a bit
-  - In iOS Simulator via `Cmd+D`
-  - In Andorid Emulator via `Ctrl+M`
-Then select `Debug JS Remotely`. New Tab will be opened in Chrome browser. Activate dev tools on this tab and click `Sources`, then navigate into `webpack://` and find the source file where you want to set breakpoint.
 
+- On iOS device by shaking device a bit
+- In iOS Simulator via `Cmd+D`
+- In Andorid Emulator via `Ctrl+M`
+  Then select `Debug JS Remotely`. New Tab will be opened in Chrome browser. Activate dev tools on this tab and click `Sources`, then navigate into `webpack://` and find the source file where you want to set breakpoint.

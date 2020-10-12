@@ -1,12 +1,12 @@
-# Deployment with Apollo Universal Starter Kit
+# Deployment with Web Server Kit
 
 ## Deploying to Linux Running on Node.js
 
-1. Clone the latest stable branch of Apollo Universal Starter Kit and `cd` into the project folder:
+1. Clone the latest stable branch of Web Server Kit and `cd` into the project folder:
 
 ```bash
-git clone -b stable https://github.com/sysgears/apollo-universal-starter-kit.git
-cd apollo-universal-starter-kit
+git clone -b stable https://github.com/sateesh2020/web-server-kit.git
+cd web-server-kit
 ```
 
 2. Install dependencies:
@@ -31,7 +31,7 @@ NODE_ENV=production yarn seed
 ```
 
 4. Set `SERVER_PORT` and `WEBSITE_URL` environment variables to match your production setup or edit
-`packages/server/build.config.js`:
+   `packages/server/build.config.js`:
 
 ```javascript
 const config = ...;
@@ -74,8 +74,8 @@ yarn start
 
 2. Install the Heroku Command Line Interface (CLI):
 
-    - On Ubuntu, run `sudo snap install heroku --classic`
-    - For Windows and MacOS, download the appropriate installer from [Heroku CLI]
+   - On Ubuntu, run `sudo snap install heroku --classic`
+   - For Windows and MacOS, download the appropriate installer from [Heroku CLI]
 
 3. Log in to the Heroku CLI with your Heroku login and password and follow the suggestions shown by the CLI:
 
@@ -95,6 +95,7 @@ URL after the pipe is yhe Git repository to which you'll push your application:
 ```bash
 https://application-name.herokuapp.com/ | https://git.heroku.com/application-name.git
 ```
+
 Consult [deploying a Node.js app] for full details about creating your application on Heroku.
 
 5. Set your deployment configuration variables in [Heroku Dashboard].
@@ -117,7 +118,7 @@ three variables in Heroku Dashboard:
 | EXP_USERNAME    | your_expo_account_username |
 | EXP_PASSWORD    | your_expo_account_password |
 
-**NOTE**: To register new users, configure your SMTP server. By default, Apollo Universal Starter Kit uses [Ethereal]
+**NOTE**: To register new users, configure your SMTP server. By default, Web Server Kit uses [Ethereal]
 for the fake SMTP server, but you shouldn't use Ethereal for production application because the registration emails with
 the validation link will be sent to Ethereal, _not_ to the real users.
 
@@ -128,17 +129,16 @@ the validation link will be sent to Ethereal, _not_ to the real users.
 | EMAIL_USER     | example@example.com        |
 | EMAIL_SENDER   | example@example.com        |
 
-By default Apollo Universal Starter Kit uses `EMAIL_SENDER` as the `from` e-mail address for all mail sent. It will fall back to `EMAIL_USER` if `EMAIL_SENDER` is not set.
+By default Web Server Kit uses `EMAIL_SENDER` as the `from` e-mail address for all mail sent. It will fall back to `EMAIL_USER` if `EMAIL_SENDER` is not set.
 
 6. Set a proper value for the server website URL in `WEBSITE_URL` environment variable or inside `packages/server/build.config.js` to match your production setup.
 
-* If you're deploying your application on Heroku without a custom domain name, the production URL will look similar to this: `https://application-name.herokuapp.com`
+- If you're deploying your application on Heroku without a custom domain name, the production URL will look similar to this: `https://application-name.herokuapp.com`
 
 `application-name` is the name of your application you've generated at the step 4 (creation of an app with the Heroku
 CLI).
 
-* If you're using a custom domain, the production URL will look like this: `https://domain-example.com`
-
+- If you're using a custom domain, the production URL will look like this: `https://domain-example.com`
 
 Remember to add the custom domain in [Heroku Dashboard]. Select your application from the list, and then follow to the
 `Settings` tab. Scroll to the button **Add domain** and add your domain.
@@ -169,7 +169,7 @@ git push --force heroku your_branch:master
 ```
 
 10. Heroku will automatically build your project. The website will be published to Heroku, and the mobile app will be
-available on [Expo.io].
+    available on [Expo.io].
 
 ## Publishing a Mobile App
 

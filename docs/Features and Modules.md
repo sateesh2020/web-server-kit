@@ -1,4 +1,4 @@
-# Apollo Universal Starter Kit Features
+# Web Server Kit Features
 
 In this section, you can find information about the features and implemented modules available in Apollo Universal
 Starter Kit.
@@ -11,26 +11,26 @@ Starter Kit.
 These two problems are typical of applications with the RESTful design. GraphQL, on the other hand, allows us to reduce
 the load on the application layers.
 
-Apollo Universal Starter Kit relies on [Apollo] (hence the name of the kit), a popular GraphQL implementation, to bring
+Web Server Kit relies on [Apollo] (hence the name of the kit), a popular GraphQL implementation, to bring
 all the power of GraphQL in your applications. Apollo brings important functionality with
 [Optimistic UI updates](#optimistic-ui-updates), Apollo Link State (the local state management),
 [Apollo Redux Store](#server-side-rendering-with-apollo-redux-store), [Apollo Subscriptions], and other libraries.
 
 ## Authentication & Authorization
 
-Apollo Universal Starter Kit fully implements two authentication mechanisms: server sessions and [JSON Web Tokens]. The
+Web Server Kit fully implements two authentication mechanisms: server sessions and [JSON Web Tokens]. The
 starter kit allows you to handle sessions on both the client and the server at the same time, which is a default
 authentication mode that we use.
 
 The starter kit provides several ways for user identification: password-based identification and social-based
 identification with Google OAuth, Facebook, LinkedIn, and GitHub.
 
-Besides authentication, Apollo Universal Starter Kit also implements fine-grained permission-based authorization with
+Besides authentication, Web Server Kit also implements fine-grained permission-based authorization with
 three user types &ndash; administrators, registered users, and non-registered users.
 
 ## Internationalization with i18next
 
-Apollo Universal Starter Kit integrates the [i18next] library to help localize the application using a complete
+Web Server Kit integrates the [i18next] library to help localize the application using a complete
 internationalization solution for the web and server applications. The starter kit provides the functionality to
 automatically detect and remember the language, as well as remember the language selected by the user.
 
@@ -48,7 +48,7 @@ and how to run the project with the payments module.
 ## PubSub Mechanism Based on GraphQL Subscriptions
 
 The starter kit integrates a PubSub mechanism for delivering live data from the server to the client using a simple
-library [graphql-subscriptions]. The Apollo Universal Starter Kit modules _counter_, _payments_, and _posts & comments_
+library [graphql-subscriptions]. The Web Server Kit modules _counter_, _payments_, and _posts & comments_
 use GraphQL Subscriptions to update the content in the client application when the changes are made on the server.
 
 ## Pagination
@@ -58,7 +58,7 @@ module.
 
 ## State Management
 
-The counter module provides three examples of state management for your Apollo Universal Starter Kit-based applications.
+The counter module provides three examples of state management for your Web Server Kit-based applications.
 The starter kit stores the state on the client using Apollo Link State and Redux. The application state is also stored
 on the server using Apollo Subscriptions for real-time updates.
 
@@ -76,7 +76,7 @@ The [Knex] code for accessing SQLite is included as an example of using arbitrar
 GraphQL. You can use any NoSQL storage or other data source in a similar way.
 
 [Debug SQL] prints out excluded queries, with respective times in development mode. To set up debugging SQL, consult
-[Apollo Universal Starter Kit configurations].
+[Web Server Kit configurations].
 
 ## Styling Libraries
 
@@ -112,7 +112,7 @@ about the differences between the client and server code.
 
 ## Babel
 
-Apollo Universal Starter Kit uses a popular transpiler [Babel] to transpile ES7 and ES6 code to ES5.
+Web Server Kit uses a popular transpiler [Babel] to transpile ES7 and ES6 code to ES5.
 
 ## DataLoader
 
@@ -123,13 +123,13 @@ You can view the example of DataLoader usage in the posts & comments module.
 
 ## ESLint and TSLint
 
-[ESLint] and [TSLint] will help you stick with the proper code style. Apollo Universal Starter Kit automatically checks
+[ESLint] and [TSLint] will help you stick with the proper code style. Web Server Kit automatically checks
 any changes in JavaScript files with ESLint and the changes in TypeScript files with TSLint before they're committed to
 Git.
 
 ## React & React Native
 
-Apollo Universal Starter Kit is set up for [React] and [React Native] for the client and mobile applications
+Web Server Kit is set up for [React] and [React Native] for the client and mobile applications
 respectively. When building React and React Native components, you can use both `.jsx` and `.tsx` extensions as the
 starter kit supports the [JSX] and [TSX] syntax.
 
@@ -168,7 +168,7 @@ Just as JavaScript, TypeScript is also compiled to ES5 code.
 [relay-style cursor pagination]: http://dev.apollodata.com/react/pagination.html#relay-cursors
 [knex]: http://knexjs.org
 [debug sql]: https://spin.atomicobject.com/2017/03/27/timing-queries-knexjs-nodejs/
-[apollo universal starter kit configurations]: /docs/Configuration.md
+[web server kit configurations]: /docs/Configuration.md
 [twitter bootstrap]: http://getbootstrap.com
 [styled components]: https://www.styled-components.com/
 [nativebase]: https://nativebase.io

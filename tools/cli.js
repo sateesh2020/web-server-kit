@@ -24,7 +24,7 @@ const commandInvoker = new CommandInvoker(
 
 prog
   .version('1.0.0')
-  .description('Full info: https://github.com/sysgears/apollo-universal-starter-kit/blob/master/docs/tools/cli.md')
+  .description('Full info: https://github.com/sateesh2020/web-server-kit/blob/master/docs/tools/cli.md')
   // Add module
   .command('addmodule', 'Create a new Module.')
   .argument('<moduleName>', 'Module name')

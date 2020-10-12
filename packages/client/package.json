@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sysgears/apollo-universal-starter-kit"
+    "url": "https://github.com/sateesh2020/web-server-kit"
   },
   "bugs": {
-    "url": "https://github.com/sysgears/apollo-universal-starter-kit/issues"
+    "url": "https://github.com/sateesh2020/web-server-kit/issues"
   },
-  "homepage": "https://github.com/sysgears/apollo-universal-starter-kit",
+  "homepage": "https://github.com/sateesh2020/web-server-kit",
   "keywords": [
     "apollo",
     "universal",
@@ -34,7 +34,7 @@
     "react",
     "redux"
   ],
-  "author": "SysGears INC",
+  "author": "Satheesh Valluru",
   "license": "MIT",
   "dependencies": {
     "@apollo/react-hooks": "^3.0.0",
@@ -42,16 +42,12 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@gqlapp/chat-client-react": "^0.1.0",
-    "@gqlapp/contact-client-react": "^0.1.0",
     "@gqlapp/core-client-react": "^0.1.0",
     "@gqlapp/counter-client-react": "^0.1.0",
     "@gqlapp/forms-client-react": "^0.1.0",
     "@gqlapp/i18n-client-react": "^0.1.0",
     "@gqlapp/i18n-common-react": "^0.1.0",
     "@gqlapp/module-client-react": "^0.1.0",
-    "@gqlapp/payments-client-react": "^0.1.0",
-    "@gqlapp/reports-client-react": "^0.1.0",
     "@gqlapp/validation-common-react": "^0.1.0",
     "@loadable/component": "^5.10.1",
     "antd": "^3.19.8",
@@ -152,18 +148,6 @@
     "webpack-cli": "^3.3.4"
   },
   "optionalDependencies": {
-    "@expo/vector-icons": "^10.0.6",
-    "expo": "^36.0.1",
-    "native-base": "^2.13.5",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-credit-card-input": "^0.4.1",
-    "react-native-elements": "^0.19.1",
-    "react-native-gifted-chat": "^0.11.0",
-    "react-native-keyboard-spacer": "^0.4.1",
-    "react-native-mime-types": "^2.2.1",
-    "react-native-modal": "^5.4.0",
-    "react-native-simple-picker": "^3.1.1",
-    "react-navigation": "^3.11.1",
     "uuid": "^3.3.2"
   },
   "browserslist": {

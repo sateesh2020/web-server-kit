@@ -6,7 +6,7 @@ import { PageLayout, Select, Option } from '@gqlapp/look-client-react';
 import { translate } from '@gqlapp/i18n-client-react';
 import settings from '@gqlapp/config';
 
-import PaginationDemoView from '../components/PaginationDemoView.web';
+import PaginationDemoView from '../components/PaginationDemoView';
 import { useDataProvider } from './DataProvider';
 
 const PaginationDemo = ({ t }) => {
